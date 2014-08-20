@@ -1,15 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# uncomment line 15-21 for using I2C and comment line 25-37, switch for using GPIO directly
+# uncomment line 14-20 for using I2C and comment line 24-35, switch for using GPIO directly
 
 import smbus
 import time
-import json
 import RPi.GPIO as GPIO
 
-liste = json.load(open('list.txt'))  #in list is every 10th index set to 4, which stands for 1/10 = 10% of time pin2 (hexcode 0x04) at mcp is on
-print liste #debugging ...
+liste = [4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# print liste #debugging ...
 periodendauer = 0.001 # means 1000Hz
 
 # # to send data to mcp23017
